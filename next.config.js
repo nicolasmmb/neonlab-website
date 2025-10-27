@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   experimental: {
-    optimizePackageImports: ['framer-motion', 'motion'],
+    optimizePackageImports: ['framer-motion'],
   },
   // Necessário para Docker standalone output
   output: 'standalone',

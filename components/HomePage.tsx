@@ -33,7 +33,7 @@ export default function HomePage() {
       <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 border-b border-white/10 shadow-sm">
         <div className="container mx-auto flex justify-between items-center px-4 py-3">
           <div className="flex items-center gap-2">
-            <NeonlabAppleIcon id="neonlab-icon-download" className="w-8 h-8" />
+            <NeonlabAppleIcon className="w-8 h-8" />
             <span className="text-lg font-bold text-white">NEONLAB.DEV</span>
           </div>
           <nav className="hidden md:flex gap-2">
