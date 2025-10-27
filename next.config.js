@@ -4,6 +4,8 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ['framer-motion', 'motion'],
   },
+  // Necessário para Docker standalone output
+  output: 'standalone',
 }
 
 module.exports = nextConfig
