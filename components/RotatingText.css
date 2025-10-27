@@ -3,6 +3,7 @@
     flex-wrap: wrap;
     white-space: pre-wrap;
     position: relative;
+    align-items: center;
 }
 
 .text-rotate-sr-only {
@@ -29,6 +30,10 @@
 
 .text-rotate-element {
     display: inline-block;
+    /* Small vertical padding to avoid glyph clipping during translateY animations */
+    padding-top: 0.08em;
+    padding-bottom: 0.08em;
+    line-height: 1;
 }
 
 .text-rotate-space {

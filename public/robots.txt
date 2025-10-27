@@ -1,4 +1,32 @@
+
+# robots.txt - Neonlab.dev
+# Permite indexação por motores de busca (Google, Bing) e crawlers de IA
+
+# Google (indexação completa)
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Bing
+User-agent: Bingbot
+Allow: /
+
+# OpenAI (ex.: OpenAI crawlers / bots)
+User-agent: OpenAI
+Allow: /
+User-agent: OpenAIbot
+Allow: /
+
+# Anthropic / outros crawlers de IA conhecidos
+User-agent: Anthropic
+Allow: /
+
+# Regra geral para quaisquer outros agentes
 User-agent: *
 Allow: /
 
 Sitemap: https://neonlab.dev/sitemap.xml
+
+# Nota: alguns crawlers usam user-agents diferentes. Como diretiva geral,
+# o bloco "User-agent: *" já permite acesso a todos. Adicionamos seções
+# específicas para Google/Bing/OpenAI/Anthropic para explicitar a permissão.
