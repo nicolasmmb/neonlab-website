@@ -10,11 +10,10 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: 'Neonlab.dev - Modernização e Criação de Experiências Digitais para Empresas',
-  description:
-    'A Neonlab.dev ajuda empresas a modernizar processos e criar experiências digitais únicas — com tecnologia, design e performance de ponta.',
+  title: 'neonlab.dev - Modernizando ideias em experiências digitais',
+  description: 'neonlab.dev transforma suas ideias em experiências digitais modernas que cativam, engajam e convertem. Especialistas em desenvolvimento web, design de interfaces e soluções de alta performance para empresas que querem se destacar no digital.',
   keywords: [
-    // Branding e serviços
+    'neonlab',
     'neonlab.dev',
     'neonlab',
     'modernização digital',
@@ -92,10 +91,9 @@ export const metadata: Metadata = {
     'experiência do usuário',
     'interface moderna'
   ],
-
-  authors: [{ name: 'Neonlab.dev', url: 'https://neonlab.dev' }],
-  creator: 'Neonlab.dev',
-  publisher: 'Neonlab.dev',
+  authors: [{ name: 'neonlab.dev' }],
+  creator: 'neonlab.dev',
+  publisher: 'neonlab.dev',
 
   metadataBase: new URL('https://neonlab.dev'),
 
@@ -110,14 +108,15 @@ export const metadata: Metadata = {
     locale: 'pt_BR',
     url: 'https://neonlab.dev',
     siteName: 'Neonlab.dev',
-    title: 'Neonlab.dev - Transformando ideias em experiências digitais modernas',
+    title: 'neonlab.dev - Transformando ideias em experiências digitais modernas',
     description: "A Neonlab.dev ajuda empresas a modernizar processos e criar experiências digitais únicas — com tecnologia, design e performance de ponta.",
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Neonlab.dev - Experiências Digitais Modernas',
+        alt: 'neonlab.dev - Transformando ideias em experiências digitais modernas',
+        type: 'image/png',
       },
     ],
   },

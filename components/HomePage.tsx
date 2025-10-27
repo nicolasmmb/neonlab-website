@@ -102,6 +102,45 @@ export default function HomePage() {
                   </p>
                 </CardContent>
               </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle>Automação com n8n</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-400/90">
+                    Projetos de automação e integração usando n8n: criação de workflows entre
+                    CRMs, e-mails, APIs e ferramentas internas. Entregamos fluxos testados,
+                    monitorados e prontos para produção, reduzindo trabalho manual e erros.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle>Apps Mobile para Clientes</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-400/90">
+                    Desenvolvimento de aplicações móveis (React Native / Expo) focadas em UX,
+                    integrações com back-end, notificações push e publicação nas lojas. Projetos
+                    prontos para escalar e com manutenção contínua.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle>Sites Corporativos e Landing Pages</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-400/90">
+                    Sites responsivos, rápidos e otimizados para SEO — desde sites institucionais
+                    até landing pages para campanhas. Integração com CMS headless e práticas de
+                    acessibilidade.
+                  </p>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </section>

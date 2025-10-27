@@ -63,7 +63,7 @@ const HeroSection = () => {
               <span className="absolute inline-flex h-full w-full rounded-full bg-blue-300/60"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-300/80"></span>
             </span>
-            Disponível para novos projetos
+            Projetos em andamento
           </span>
         </motion.div>
 
@@ -83,7 +83,7 @@ const HeroSection = () => {
             </span>
 
             <div className="w-full max-w-[280px] sm:max-w-sm md:max-w-md lg:max-w-lg">
-              <div className="inline-flex w-full px-4 sm:px-6 md:px-8 bg-gradient-to-br from-blue-400/15 via-purple-400/15 to-cyan-400/15 backdrop-blur-xl border border-white/15 py-2 sm:py-3 md:py-4 justify-center rounded-xl sm:rounded-2xl">
+              <div className="inline-flex w-full px-4 sm:px-6 md:px-8 bg-gradient-to-br from-blue-400/15 via-purple-400/15 to-cyan-400/15 border border-white/15 py-2 sm:py-3 md:py-4 justify-center rounded-xl sm:rounded-2xl">
                 <RotatingText
                   texts={['Performance', 'Tecnologia', 'Inovação', 'Design']}
                   mainClassName="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter text-white"
