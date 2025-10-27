@@ -58,12 +58,15 @@ export const RotatingText: React.FC<RotatingTextProps> = ({
   texts,
   mainClassName = '',
   splitLevelClassName = '',
-  initial = { y: '100%' },
-  animate = { y: 0 },
-  exit = { y: '-100%' },
+  // use numeric offsets (px) for smoother, predictable motion across devices
+  initial = { y: 20, opacity: 0 },
+  animate = { y: 0, opacity: 1 },
+  exit = { y: -20, opacity: 0 },
   staggerFrom = 'first',
-  staggerDuration = 0.01,
-  transition = { type: 'tween', duration: 0.3, ease: 'easeInOut' },
+  // slightly larger stagger for a natural cascade
+  staggerDuration = 0.04,
+  // default per-character transition: spring for a lively yet smooth feel
+  transition = { type: 'spring', damping: 18, stiffness: 200 },
   rotationInterval = 3000,
 }) => {
   const [index, setIndex] = useState(0)
@@ -90,13 +93,10 @@ export const RotatingText: React.FC<RotatingTextProps> = ({
         transition={{
           staggerChildren: staggerDuration,
           staggerDirection,
-          delayChildren: 0.1,
-          layout: {
-            type: "spring",
-            damping: 35,
-            stiffness: 300,
-            duration: 0.5
-          }
+          // small delay so container moves before children animate
+          delayChildren: 0.06,
+          // use a short tween for the container layout to avoid heavy bounces
+          layout: { type: 'tween', duration: 0.32, ease: 'easeInOut' }
         }}
       >
         <SplitText

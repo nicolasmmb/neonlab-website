@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import { NeonlabAppleIcon, DownloadIcon } from './Icons'
+import { NeonlabAppleIcon } from './Icons'
 import HeroSection from './HeroSection'
 import { Button, Input, Textarea, Card, CardHeader, CardTitle, CardContent } from './UI'
 
@@ -25,26 +25,7 @@ export default function HomePage() {
     }, 3000)
   }
 
-  const handleDownloadSVG = () => {
-    const svgElement = document.getElementById('neonlab-icon-download')
-    if (!svgElement) {
-      console.error('Elemento SVG não encontrado')
-      return
-    }
 
-    const svgString = svgElement.outerHTML
-    const fullSvgString = '<?xml version="1.0" encoding="UTF-8"?>\n' + svgString
-
-    const blob = new Blob([fullSvgString], { type: 'image/svg+xml' })
-    const url = URL.createObjectURL(blob)
-    const a = document.createElement('a')
-    a.href = url
-    a.download = 'neonlab-icon.svg'
-    document.body.appendChild(a)
-    a.click()
-    document.body.removeChild(a)
-    URL.revokeObjectURL(url)
-  }
 
   return (
     <div className="flex flex-col min-h-screen bg-black text-gray-100 font-sans overflow-x-hidden reactbits-background">
@@ -54,13 +35,6 @@ export default function HomePage() {
           <div className="flex items-center gap-2">
             <NeonlabAppleIcon id="neonlab-icon-download" className="w-8 h-8" />
             <span className="text-lg font-bold text-white">Neonlab.dev</span>
-            <button
-              onClick={handleDownloadSVG}
-              title="Exportar ícone SVG"
-              className="ml-2 text-gray-400 hover:text-white transition-colors p-1.5 rounded-lg hover:bg-white/10"
-            >
-              <DownloadIcon className="w-4 h-4" />
-            </button>
           </div>
           <nav className="hidden md:flex gap-2">
             <a

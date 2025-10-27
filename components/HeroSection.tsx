@@ -144,10 +144,10 @@ const HeroSection = () => {
 
         {/* Info adicional */}
         <motion.div variants={fadeIn} className="mt-8 sm:mt-10">
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-0 sm:gap-6 px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 max-w-full">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-0 sm:gap-6 px-4 sm:px-6 py-2 sm:py-3 rounded-xl sm:rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 max-w-full">
             {/* Badge 1 */}
-            <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-300/80 w-full sm:w-auto px-3 py-2">
-              <span className="w-8 flex items-center justify-center flex-shrink-0">
+            <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-300/80 w-full sm:w-auto px-2 sm:px-3 py-3 sm:py-2">
+              <span className="w-15 flex items-center justify-center flex-shrink-0">
                 <svg className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400/80" fill="currentColor" viewBox="0 0 20 20">
                   <path
                     fillRule="evenodd"
@@ -158,16 +158,16 @@ const HeroSection = () => {
               </span>
               <span className="whitespace-nowrap">Consultoria gratuita</span>
             </div>
-            {/* mobile horizontal divider - starts at center of the check (1rem) */}
-            <div className="sm:hidden" style={{ marginLeft: '1rem', width: 'calc(100% - 1rem)' }}>
+            {/* mobile horizontal divider - aligns starting at icon center */}
+            <div className="sm:hidden" style={{ marginLeft: '0.75rem', width: 'calc(100% - 0.75rem)' }}>
               <div className="h-px bg-white/10" />
             </div>
             {/* desktop vertical divider */}
             <div className="hidden sm:block w-px h-4 bg-white/10 mx-2" />
 
             {/* Badge 2 */}
-            <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-300/80 w-full sm:w-auto px-3 py-2">
-              <span className="w-8 flex items-center justify-center flex-shrink-0">
+            <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-300/80 w-full sm:w-auto px-2 sm:px-3 py-3 sm:py-2">
+              <span className="w-15 flex items-center justify-center flex-shrink-0">
                 <svg className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400/80" fill="currentColor" viewBox="0 0 20 20">
                   <path
                     fillRule="evenodd"
@@ -179,15 +179,15 @@ const HeroSection = () => {
               <span className="whitespace-nowrap">Resposta em 24h</span>
             </div>
             {/* mobile horizontal divider */}
-            <div className="sm:hidden" style={{ marginLeft: '1rem', width: 'calc(100% - 1rem)' }}>
+            <div className="sm:hidden" style={{ marginLeft: '0.75rem', width: 'calc(100% - 0.75rem)' }}>
               <div className="h-px bg-white/10" />
             </div>
             {/* desktop vertical divider */}
             <div className="hidden sm:block w-px h-4 bg-white/10 mx-2" />
 
             {/* Badge 3 */}
-            <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-300/80 w-full sm:w-auto px-3 py-2">
-              <span className="w-8 flex items-center justify-center flex-shrink-0">
+            <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-300/80 w-full sm:w-auto px-2 sm:px-3 py-3 sm:py-2">
+              <span className="w-15 flex items-center justify-center flex-shrink-0">
                 <svg className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400/80" fill="currentColor" viewBox="0 0 20 20">
                   <path
                     fillRule="evenodd"
