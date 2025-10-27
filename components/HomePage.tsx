@@ -62,7 +62,7 @@ export default function HomePage() {
             <h2 className="text-4xl md:text-5xl font-bold text-center text-white mb-4">
               Nosso Portfólio
             </h2>
-            <p className="text-center text-lg text-gray-400/80 mt-4 max-w-2xl mx-auto">
+            <p className="text-center text-lg text-gray-300/90 mt-4 max-w-2xl mx-auto">
               Projetos que transformam ideias em realidade digital de alta performance.
             </p>
 
@@ -113,7 +113,7 @@ export default function HomePage() {
               <h2 className="text-4xl md:text-5xl font-bold text-center text-white mb-4">
                 Vamos Criar o Futuro
               </h2>
-              <p className="text-center text-lg text-gray-400/80 mt-4 max-w-xl mx-auto">
+              <p className="text-center text-lg text-gray-300/90 mt-4 max-w-xl mx-auto">
                 Tem uma ideia? Vamos conversar sobre como a Neonlab.dev pode dar vida ao seu próximo
                 projeto.
               </p>
@@ -181,7 +181,7 @@ export default function HomePage() {
       </main>
 
       <footer className="border-t border-white/5 mt-20 backdrop-blur-xl">
-        <div className="container mx-auto max-w-6xl py-8 px-6 text-center text-gray-500/80">
+        <div className="container mx-auto max-w-6xl py-8 px-6 text-center text-gray-300/90">
           <p className="text-sm">© {currentYear} Neonlab.dev — Todos os direitos reservados.</p>
         </div>
       </footer>
