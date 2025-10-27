@@ -144,37 +144,58 @@ const HeroSection = () => {
 
         {/* Info adicional */}
         <motion.div variants={fadeIn} className="mt-8 sm:mt-10">
-          <div className="inline-flex flex-wrap items-center justify-center gap-3 sm:gap-6 px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 max-w-full">
-            <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-300/80">
-              <svg className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400/80 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clipRule="evenodd"
-                />
-              </svg>
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-0 sm:gap-6 px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 max-w-full">
+            {/* Badge 1 */}
+            <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-300/80 w-full sm:w-auto px-3 py-2">
+              <span className="w-8 flex items-center justify-center flex-shrink-0">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400/80" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </span>
               <span className="whitespace-nowrap">Consultoria gratuita</span>
             </div>
-            <div className="hidden sm:block w-px h-4 bg-white/10" />
-            <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-300/80">
-              <svg className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400/80 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clipRule="evenodd"
-                />
-              </svg>
+            {/* mobile horizontal divider - starts at center of the check (1rem) */}
+            <div className="sm:hidden" style={{ marginLeft: '1rem', width: 'calc(100% - 1rem)' }}>
+              <div className="h-px bg-white/10" />
+            </div>
+            {/* desktop vertical divider */}
+            <div className="hidden sm:block w-px h-4 bg-white/10 mx-2" />
+
+            {/* Badge 2 */}
+            <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-300/80 w-full sm:w-auto px-3 py-2">
+              <span className="w-8 flex items-center justify-center flex-shrink-0">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400/80" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </span>
               <span className="whitespace-nowrap">Resposta em 24h</span>
             </div>
-            <div className="hidden md:block w-px h-4 bg-white/10" />
-            <div className="hidden md:flex items-center gap-2 text-xs sm:text-sm text-gray-300/80">
-              <svg className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400/80 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clipRule="evenodd"
-                />
-              </svg>
+            {/* mobile horizontal divider */}
+            <div className="sm:hidden" style={{ marginLeft: '1rem', width: 'calc(100% - 1rem)' }}>
+              <div className="h-px bg-white/10" />
+            </div>
+            {/* desktop vertical divider */}
+            <div className="hidden sm:block w-px h-4 bg-white/10 mx-2" />
+
+            {/* Badge 3 */}
+            <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-300/80 w-full sm:w-auto px-3 py-2">
+              <span className="w-8 flex items-center justify-center flex-shrink-0">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400/80" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </span>
               <span className="whitespace-nowrap">Sem compromisso</span>
             </div>
           </div>
