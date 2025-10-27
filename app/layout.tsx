@@ -43,6 +43,11 @@ export const metadata: Metadata = {
     description: 'Criamos experiências digitais que cativam e convertem',
     images: ['/og-image.png'],
   },
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg'
+  },
   robots: {
     index: true,
     follow: true,
