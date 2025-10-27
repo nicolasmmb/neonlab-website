@@ -75,22 +75,29 @@ export const RotatingText: React.FC<RotatingTextProps> = ({
     return () => clearTimeout(timer)
   }, [index, texts.length, rotationInterval])
 
-  const staggerChildren = { staggerChildren: staggerDuration }
   const staggerDirection = staggerFrom === 'last' ? -1 : 1
 
   return (
     <AnimatePresence mode="wait">
       <motion.div
         key={texts[index]}
-        initial="initial"
-        animate="animate"
-        exit="exit"
-        variants={{
-          initial: { transition: { staggerChildren, staggerDirection: -staggerDirection } },
-          animate: { transition: { staggerChildren, staggerDirection } },
-          exit: { transition: { staggerChildren, staggerDirection: -staggerDirection } },
-        }}
+        initial={initial}
+        animate={animate}
+        exit={exit}
         className={mainClassName}
+        layout
+        layoutId="rotating-text-container"
+        transition={{
+          staggerChildren: staggerDuration,
+          staggerDirection,
+          delayChildren: 0.1,
+          layout: {
+            type: "spring",
+            damping: 35,
+            stiffness: 300,
+            duration: 0.5
+          }
+        }}
       >
         <SplitText
           className={splitLevelClassName}

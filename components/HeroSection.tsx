@@ -27,23 +27,23 @@ const HeroSection = () => {
   return (
     <section className="relative flex flex-col items-center justify-center min-h-[100dvh] text-center px-4 sm:px-6 pt-24 sm:pt-28 md:pt-20 pb-10">
 
-      {/* DotGrid Background - MAIS VISÍVEL */}
+      {/* DotGrid Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <DotGrid
-          dotSize={6}                  // Aumentado de 6 para 8
-          gap={22}                     // Reduzido de 24 para 22 (mais pontos)
-          baseColor="#1a1a1a"          // Cinza mais claro (era #1a1a1a)
-          activeColor="#3b82f6"        // Azul mantido
-          proximity={96}              // Aumentado de 100 para 120
-          shockRadius={96}            // Aumentado de 180 para 200
-          shockStrength={1.0}            // Aumentado de 2.5 para 3
+          dotSize={6}
+          gap={24}
+          baseColor="#1a1a1a"
+          activeColor="#3b82f6"
+          proximity={96}
+          shockRadius={96}
+          shockStrength={1}
           resistance={800}
           returnDuration={1.8}
           style={{
             position: 'absolute',
             width: '100%',
             height: '100%',
-            opacity: 0.6              // Aumentado de 0.6 para 0.8
+            opacity: 0.6
           }}
         />
       </div>
