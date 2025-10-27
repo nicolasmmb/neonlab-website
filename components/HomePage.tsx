@@ -34,7 +34,7 @@ export default function HomePage() {
         <div className="container mx-auto flex justify-between items-center px-4 py-3">
           <div className="flex items-center gap-2">
             <NeonlabAppleIcon id="neonlab-icon-download" className="w-8 h-8" />
-            <span className="text-lg font-bold text-white">Neonlab.dev</span>
+            <span className="text-lg font-bold text-white">NEONLAB.DEV</span>
           </div>
           <nav className="hidden md:flex gap-2">
             <a
