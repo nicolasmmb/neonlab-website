@@ -1,0 +1,39 @@
+@baseUrl = https://bot.neonlab.dev
+@localUrl = http://localhost:9999
+
+### Envia contato para o bot em produção
+POST {{baseUrl}}/contacts
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Teste Neonlab",
+  "email": "teste-{{$timestamp}}@example.com",
+  "phone": "+5511912345678",
+  "message": "Mensagem de teste enviada em {{$datetime iso8601}} via arquivo .http"
+}
+
+### Envia contato para o bot rodando localmente
+# Ajuste @localUrl se o serviço estiver exposto em outra porta.
+POST {{localUrl}}/contacts
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Teste Local Neonlab",
+  "email": "local-{{$timestamp}}@example.com",
+  "phone": "(11) 91234-5678",
+  "message": "Mensagem de teste enviada contra o servidor local em {{$datetime iso8601}}"
+}
+
+### Exemplo de payload inválido (espera 400 Bad Request)
+# Útil para validar as mensagens de erro da API.
+POST {{baseUrl}}/contacts
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "",
+  "email": "email-invalido",
+  "message": ""
+}

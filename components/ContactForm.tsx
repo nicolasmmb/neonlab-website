@@ -1,27 +1,63 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
+import { Effect } from 'effect'
+import { ContactFlowError, sendContactEffect } from '../lib/contactFlow'
 import { Button, Input, Textarea } from './UI'
 
 export default function ContactForm() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
+  const [phone, setPhone] = useState('')
   const [message, setMessage] = useState('')
-  const [formSuccess, setFormSuccess] = useState(false)
+  const [successMessage, setSuccessMessage] = useState<string | null>(null)
+  const [errorMessage, setErrorMessage] = useState<string | null>(null)
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   useEffect(() => {
-    if (!formSuccess) return
-    const timer = setTimeout(() => setFormSuccess(false), 3000)
+    if (!successMessage) return
+    const timer = setTimeout(() => setSuccessMessage(null), 4000)
     return () => clearTimeout(timer)
-  }, [formSuccess])
+  }, [successMessage])
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    console.log('Formulário enviado:', { name, email, message })
-    setFormSuccess(true)
-    setName('')
-    setEmail('')
-    setMessage('')
+    setIsSubmitting(true)
+    setErrorMessage(null)
+    setSuccessMessage(null)
+
+    try {
+      const result = await Effect.runPromise(
+        sendContactEffect({ name, email, phone, message })
+      )
+
+      if (process.env.NODE_ENV !== 'production') {
+        console.info('[ContactForm] Contato enviado com sucesso', result)
+      }
+
+      setSuccessMessage(result.message)
+      setName('')
+      setEmail('')
+      setPhone('')
+      setMessage('')
+    } catch (error) {
+      if (error instanceof ContactFlowError) {
+        const message = error.details ? `${error.message} (${error.details})` : error.message
+        console.error('[ContactForm] Falha ao enviar contato', {
+          message: error.message,
+          details: error.details,
+          cause: error.cause
+        })
+        setErrorMessage(message)
+      } else if (error instanceof Error) {
+        console.error('Erro inesperado ao enviar formulário de contato:', error)
+        setErrorMessage('Ocorreu um erro inesperado. Tente novamente em instantes.')
+      } else {
+        setErrorMessage('Ocorreu um erro inesperado. Tente novamente em instantes.')
+      }
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -55,6 +91,19 @@ export default function ContactForm() {
       </div>
 
       <div className="space-y-2">
+        <label htmlFor="phone" className="text-sm font-medium text-gray-300/90">
+          Telefone (opcional)
+        </label>
+        <Input
+          id="phone"
+          type="tel"
+          placeholder="(11) 91234-5678"
+          value={phone}
+          onChange={(event) => setPhone(event.target.value)}
+        />
+      </div>
+
+      <div className="space-y-2">
         <label htmlFor="message" className="text-sm font-medium text-gray-300/90">
           Mensagem
         </label>
@@ -70,15 +119,22 @@ export default function ContactForm() {
       <div className="text-center pt-2">
         <Button
           type="submit"
-          className="w-full bg-white/10 backdrop-blur-xl border border-white/20 text-white font-bold hover:bg-white/15 hover:border-white/30 transition-all duration-500 hover:scale-[1.02] py-4"
+          className="w-full bg-white/10 backdrop-blur-xl border border-white/20 text-white font-bold hover:bg-white/15 hover:border-white/30 transition-all duration-500 hover:scale-[1.02] py-4 disabled:cursor-not-allowed disabled:opacity-60"
+          disabled={isSubmitting}
         >
-          Enviar Mensagem
+          {isSubmitting ? 'Enviando...' : 'Enviar Mensagem'}
         </Button>
       </div>
 
-      {formSuccess && (
+      {errorMessage && (
+        <div className="p-4 text-center text-rose-300/90 border border-rose-500/30 bg-rose-500/10 rounded-xl backdrop-blur-xl">
+          {errorMessage}
+        </div>
+      )}
+
+      {successMessage && (
         <div className="p-4 text-center text-emerald-300/90 border border-emerald-500/30 bg-emerald-500/10 rounded-xl backdrop-blur-xl">
-          Mensagem enviada com sucesso! Entraremos em contato em breve.
+          {successMessage}
         </div>
       )}
     </form>
