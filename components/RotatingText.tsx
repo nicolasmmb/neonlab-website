@@ -10,8 +10,6 @@ import {
   type TargetAndTransition
 } from 'framer-motion'
 
-import './RotatingText.css'
-
 function cn(...classes: (string | undefined | null | boolean)[]) {
   return classes.filter(Boolean).join(' ')
 }
@@ -172,14 +170,28 @@ export const RotatingText = forwardRef<RotatingTextRef, RotatingTextProps>((prop
   }, [next, rotationInterval, auto])
 
   return (
-    <motion.span className={cn('text-rotate', mainClassName)} {...rest} layout transition={transition}>
-      <span className="text-rotate-sr-only">{texts[currentTextIndex]}</span>
+    <motion.span
+      className={cn('relative flex flex-wrap items-center whitespace-pre-wrap', mainClassName)}
+      {...rest}
+      layout
+      transition={transition}
+    >
+      <span className="sr-only">{texts[currentTextIndex]}</span>
       <AnimatePresence mode={animatePresenceMode} initial={animatePresenceInitial}>
-        <motion.span key={currentTextIndex} className={cn(splitBy === 'lines' ? 'text-rotate-lines' : 'text-rotate')} layout aria-hidden="true">
+        <motion.span
+          key={currentTextIndex}
+          className={
+            splitBy === 'lines'
+              ? 'flex w-full flex-col'
+              : 'relative flex flex-wrap items-center whitespace-pre-wrap'
+          }
+          layout
+          aria-hidden="true"
+        >
           {elements.map((wordObj, wordIndex, array) => {
             const previousCharsCount = array.slice(0, wordIndex).reduce((sum, word) => sum + word.characters.length, 0)
             return (
-              <span key={wordIndex} className={cn('text-rotate-word', splitLevelClassName)}>
+              <span key={wordIndex} className={cn('inline-flex', splitLevelClassName)}>
                 {wordObj.characters.map((char, charIndex) => (
                   <motion.span
                     key={charIndex}
@@ -193,12 +205,12 @@ export const RotatingText = forwardRef<RotatingTextRef, RotatingTextProps>((prop
                         array.reduce((sum, word) => sum + word.characters.length, 0)
                       )
                     }}
-                    className={cn('text-rotate-element', elementLevelClassName)}
+                    className={cn('inline-block leading-none pt-[0.08em] pb-[0.08em]', elementLevelClassName)}
                   >
                     {char}
                   </motion.span>
                 ))}
-                {wordObj.needsSpace && <span className="text-rotate-space"> </span>}
+                {wordObj.needsSpace && <span className="whitespace-pre"> </span>}
               </span>
             )
           })}

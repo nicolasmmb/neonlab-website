@@ -2,7 +2,6 @@
 
 import React, { useRef, useEffect, useCallback, useMemo } from 'react'
 import { gsap } from 'gsap'
-import './DotGrid.css'
 
 const throttle = (func: (...args: any[]) => void, limit: number) => {
   let lastCall = 0
@@ -262,10 +261,14 @@ const DotGrid: React.FC<DotGridProps> = ({
     }
   }, [maxSpeed, speedTrigger, proximity, resistance, returnDuration, shockRadius, shockStrength])
 
+  const sectionClassName = className
+    ? `relative flex h-full w-full items-center justify-center ${className}`
+    : 'relative flex h-full w-full items-center justify-center'
+
   return (
-    <section className={`dot-grid ${className}`} style={style}>
-      <div ref={wrapperRef} className="dot-grid__wrap">
-        <canvas ref={canvasRef} className="dot-grid__canvas" />
+    <section className={sectionClassName} style={style}>
+      <div ref={wrapperRef} className="relative h-full w-full">
+        <canvas ref={canvasRef} className="pointer-events-none absolute inset-0 h-full w-full" />
       </div>
     </section>
   )

@@ -40,72 +40,11 @@
     background-color: #000000;
   }
   
-  /* Glassmorphism otimizado */
-  .glass {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  
-  .glass-strong {
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-  }
-  
-  /* Performance otimizações */
-  .will-change-transform {
-    will-change: transform;
-  }
-  
-  .gpu-accelerated {
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    perspective: 1000px;
-  }
-  
   /* Touch otimizado */
   .touch-manipulation {
     touch-action: manipulation;
     -webkit-user-select: none;
     user-select: none;
-  }
-  
-  /* Backdrop blur com suporte */
-  @supports (backdrop-filter: blur(20px)) {
-    .backdrop-blur-xl {
-      backdrop-filter: blur(16px);
-    }
-    
-    .backdrop-blur-2xl {
-      backdrop-filter: blur(24px);
-    }
-    
-    .backdrop-blur-3xl {
-      backdrop-filter: blur(40px);
-    }
-  }
-  
-  @supports (-webkit-backdrop-filter: blur(20px)) {
-    .backdrop-blur-xl {
-      -webkit-backdrop-filter: blur(16px);
-    }
-    
-    .backdrop-blur-2xl {
-      -webkit-backdrop-filter: blur(24px);
-    }
-    
-    .backdrop-blur-3xl {
-      -webkit-backdrop-filter: blur(40px);
-    }
-  }
-  
-  /* Mobile viewport altura dinâmica */
-  .min-h-screen-mobile {
-    min-height: 100vh;
-    min-height: 100dvh;
   }
   
   /* Animações reduzidas para acessibilidade */
