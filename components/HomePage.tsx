@@ -60,85 +60,88 @@ export default function HomePage() {
         <section id="portfolio" className="py-20 lg:py-32 px-6">
           <div className="container mx-auto max-w-6xl">
             <h2 className="text-4xl md:text-5xl font-bold text-center text-white mb-4">
-              Nosso Portfólio
+              Podemos ajudar sua equipe com
             </h2>
             <p className="text-center text-lg text-gray-300/90 mt-4 max-w-2xl mx-auto">
-              Projetos que transformam ideias em realidade digital de alta performance.
+              Entregamos squads rápidas com foco em chatbots, plataformas web/mobile, dados e operações em nuvem.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
               <Card>
                 <CardHeader>
-                  <CardTitle>E-commerce SaaS</CardTitle>
+                  <CardTitle>Chatbots e Automação Conversacional</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-400/90">
-                    Plataforma de e-commerce de alta performance com arquitetura JAMstack, focada em
-                    velocidade e SEO.
-                  </p>
+                  <ul className="space-y-2 text-sm text-gray-300/90">
+                    <li>Bots multicanal para WhatsApp, web e mobile.</li>
+                    <li>Fluxos inteligentes, Node.js, Python e n8n.</li>
+                    <li>Integração com CRM, billing e painéis de monitoramento.</li>
+                  </ul>
                 </CardContent>
               </Card>
 
               <Card>
                 <CardHeader>
-                  <CardTitle>Dashboard Analítico</CardTitle>
+                  <CardTitle>APIs e Plataformas Back-end</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-400/90">
-                    Interface de análise de dados (SaaS) em tempo real, construída com React e D3.js
-                    para visualizações complexas.
-                  </p>
+                  <ul className="space-y-2 text-sm text-gray-300/90">
+                    <li>APIs Go, Python e Node.js desenhadas para escalar.</li>
+                    <li>Dashboards de operação, autenticação segura e mensageria.</li>
+                    <li>Observabilidade completa e suporte a SQL/NoSQL.</li>
+                  </ul>
                 </CardContent>
               </Card>
 
               <Card>
                 <CardHeader>
-                  <CardTitle>Landing Page Interativa</CardTitle>
+                  <CardTitle>Produtos Mobile</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-400/90">
-                    Experiência web imersiva com animações WebGL e GSAP para o lançamento de um
-                    produto de tecnologia.
-                  </p>
+                  <ul className="space-y-2 text-sm text-gray-300/90">
+                    <li>Apps Flutter e React Native com UX cuidada.</li>
+                    <li>Integrações com APIs, pagamentos, push e modo offline.</li>
+                    <li>Pipelines de testes e publicação nas lojas.</li>
+                  </ul>
                 </CardContent>
               </Card>
 
               <Card>
                 <CardHeader>
-                  <CardTitle>Automação com n8n</CardTitle>
+                  <CardTitle>Data & Analytics</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-400/90">
-                    Projetos de automação e integração usando n8n: criação de workflows entre
-                    CRMs, e-mails, APIs e ferramentas internas. Entregamos fluxos testados,
-                    monitorados e prontos para produção, reduzindo trabalho manual e erros.
-                  </p>
+                  <ul className="space-y-2 text-sm text-gray-300/90">
+                    <li>Pipelines em GCP e AWS para marketing, produto e BI.</li>
+                    <li>Modelagem com dbt, Airflow e governança de dados.</li>
+                    <li>Dashboards Next.js com alertas e indicadores críticos.</li>
+                  </ul>
                 </CardContent>
               </Card>
 
               <Card>
                 <CardHeader>
-                  <CardTitle>Apps Mobile para Clientes</CardTitle>
+                  <CardTitle>CI/CD & Kubernetes</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-400/90">
-                    Desenvolvimento de aplicações móveis (React Native / Expo) focadas em UX,
-                    integrações com back-end, notificações push e publicação nas lojas. Projetos
-                    prontos para escalar e com manutenção contínua.
-                  </p>
+                  <ul className="space-y-2 text-sm text-gray-300/90">
+                    <li>Esteiras GitOps com GitHub Actions, ArgoCD e Helm.</li>
+                    <li>Deploy contínuo em clusters Kubernetes gerenciados.</li>
+                    <li>Testes end-to-end, observabilidade e alertas ativos.</li>
+                  </ul>
                 </CardContent>
               </Card>
 
               <Card>
                 <CardHeader>
-                  <CardTitle>Sites Corporativos e Landing Pages</CardTitle>
+                  <CardTitle>Experiências Web e Front-end</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-400/90">
-                    Sites responsivos, rápidos e otimizados para SEO — desde sites institucionais
-                    até landing pages para campanhas. Integração com CMS headless e práticas de
-                    acessibilidade.
-                  </p>
+                  <ul className="space-y-2 text-sm text-gray-300/90">
+                    <li>Sites e dashboards em Next.js, React e TypeScript.</li>
+                    <li>Integrações com CMS headless, APIs e automações.</li>
+                    <li>Acessibilidade, Core Web Vitals e SEO on-page.</li>
+                  </ul>
                 </CardContent>
               </Card>
             </div>
