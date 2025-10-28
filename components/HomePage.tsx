@@ -1,5 +1,6 @@
 import React from 'react'
-import { NeonlabAppleIcon } from './Icons'
+import Link from 'next/link'
+import Image from 'next/image'
 import HeroSection from './HeroSection'
 import ContactForm from './ContactForm'
 import { Card, CardHeader, CardTitle, CardContent } from './UI'
@@ -12,10 +13,21 @@ export default function HomePage() {
       {/* Header padrão, mais natural */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 border-b border-white/10 shadow-sm">
         <div className="container mx-auto flex justify-between items-center px-4 py-3">
-          <div className="flex items-center gap-2">
-            <NeonlabAppleIcon className="w-8 h-8" />
+          <Link
+            href="/"
+            className="flex items-center gap-2"
+            aria-label="Início"
+          >
+            <Image
+              src="/favicon.svg"
+              alt="Neonlab.dev"
+              width={32}
+              height={32}
+              className="h-8 w-8"
+              priority
+            />
             <span className="text-lg font-bold text-white">NEONLAB.DEV</span>
-          </div>
+          </Link>
           <nav className="hidden md:flex gap-2">
             <a
               href="#portfolio"
