@@ -10,8 +10,8 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: 'neonlab.dev - Modernizando ideias em experiências digitais',
-  description: 'neonlab.dev transforma suas ideias em experiências digitais modernas que cativam, engajam e convertem. Especialistas em desenvolvimento web, design de interfaces e soluções de alta performance para empresas que querem se destacar no digital.',
+  title: 'neonlab - Modernizando ideias em experiências digitais',
+  description: 'neonlab transforma suas ideias em experiências digitais modernas que cativam, engajam e convertem. Especialistas em desenvolvimento web, design de interfaces e soluções de alta performance para empresas que querem se destacar no digital.',
   keywords: [
     'neonlab',
     'neonlab.dev',
