@@ -1,31 +1,11 @@
-'use client'
-
-import React, { useState } from 'react'
+import React from 'react'
 import { NeonlabAppleIcon } from './Icons'
 import HeroSection from './HeroSection'
-import { Button, Input, Textarea, Card, CardHeader, CardTitle, CardContent } from './UI'
+import ContactForm from './ContactForm'
+import { Card, CardHeader, CardTitle, CardContent } from './UI'
 
 export default function HomePage() {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [message, setMessage] = useState('')
-  const [formSuccess, setFormSuccess] = useState(false)
-
   const currentYear = new Date().getFullYear()
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log('Formulário enviado:', { name, email, message })
-    setFormSuccess(true)
-    setName('')
-    setEmail('')
-    setMessage('')
-    setTimeout(() => {
-      setFormSuccess(false)
-    }, 3000)
-  }
-
-
 
   return (
     <div className="flex flex-col min-h-screen bg-black text-gray-100 font-sans overflow-x-hidden reactbits-background">
@@ -160,63 +140,7 @@ export default function HomePage() {
                 projeto.
               </p>
 
-              <form onSubmit={handleSubmit} className="mt-12 max-w-lg mx-auto space-y-6">
-                <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium text-gray-300/90">
-                    Nome
-                  </label>
-                  <Input
-                    id="name"
-                    type="text"
-                    placeholder="Seu nome completo"
-                    required
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium text-gray-300/90">
-                    E-mail
-                  </label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="seu.email@exemplo.com"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-medium text-gray-300/90">
-                    Mensagem
-                  </label>
-                  <Textarea
-                    id="message"
-                    placeholder="Descreva sua ideia ou necessidade..."
-                    required
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                  />
-                </div>
-
-                <div className="text-center pt-2">
-                  <Button
-                    type="submit"
-                    className="w-full bg-white/10 backdrop-blur-xl border border-white/20 text-white font-bold hover:bg-white/15 hover:border-white/30 transition-all duration-500 hover:scale-[1.02] py-4"
-                  >
-                    Enviar Mensagem
-                  </Button>
-                </div>
-
-                {formSuccess && (
-                  <div className="p-4 text-center text-emerald-300/90 border border-emerald-500/30 bg-emerald-500/10 rounded-xl backdrop-blur-xl">
-                    Mensagem enviada com sucesso! Entraremos em contato em breve.
-                  </div>
-                )}
-              </form>
+              <ContactForm />
             </div>
           </div>
         </section>
