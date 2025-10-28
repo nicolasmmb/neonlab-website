@@ -129,9 +129,15 @@ export const metadata: Metadata = {
     images: ['/og-image.png'],
   },
   icons: {
-    icon: '/favicon.svg',
-    shortcut: '/favicon.svg',
-    apple: '/favicon.svg',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+      { url: '/favicon-192x192.png', type: 'image/png', sizes: '192x192' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+    shortcut: [{ url: '/favicon.ico' }],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
+    other: [{ rel: 'mask-icon', url: '/favicon.svg', color: '#1C2130' }],
   },
   robots: {
     index: true,
@@ -149,6 +155,7 @@ export const metadata: Metadata = {
     statusBarStyle: 'black-translucent',
     title: 'Neonlab.dev',
   },
+  manifest: '/site.webmanifest',
   alternates: {
     canonical: 'https://neonlab.dev',
   },
