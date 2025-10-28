@@ -5,19 +5,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: 'https://neonlab.dev',
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: 'hourly',
       priority: 1,
     },
     {
       url: 'https://neonlab.dev#portfolio',
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: 'hourly',
       priority: 0.8,
     },
     {
       url: 'https://neonlab.dev#contato',
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: 'hourly',
       priority: 0.8,
     },
   ]
