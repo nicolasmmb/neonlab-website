@@ -24,16 +24,10 @@ Gostaria de desenvolver um site...
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
-### 2. **Webhook (Opcional)**
-Você pode configurar um webhook para receber notificações em:
-- Discord
-- Slack
-- Telegram
-- Qualquer endpoint HTTP
+### 2. **Webhook no Discord (Opcional)**
+Você pode configurar apenas o webhook do Discord para receber as notificações.
 
-## 🎯 Opções de Notificação
-
-### Opção 1: Discord Webhook (Recomendado - Gratuito)
+## 🎯 Configuração do Discord Webhook
 
 #### Setup:
 1. No Discord, vá no canal desejado
@@ -49,73 +43,6 @@ WEBHOOK_URL=https://discord.com/api/webhooks/123456789/token_aqui
 
 #### Resultado:
 Você receberá uma mensagem formatada no Discord com todos os dados do contato!
-
-### Opção 2: Slack Webhook
-
-#### Setup:
-1. Acesse: https://api.slack.com/messaging/webhooks
-2. Create New App → From scratch
-3. Incoming Webhooks → Activate
-4. Add New Webhook to Workspace
-5. Copiar Webhook URL
-
-#### Configurar:
-```env
-WEBHOOK_URL=https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXX
-```
-
-### Opção 3: Telegram Bot
-
-#### Setup:
-1. Fale com @BotFather no Telegram
-2. `/newbot` e siga instruções
-3. Copie o token
-4. Obtenha seu Chat ID: fale com @userinfobot
-
-#### Configurar:
-```env
-WEBHOOK_URL=https://api.telegram.org/bot<TOKEN>/sendMessage?chat_id=<CHAT_ID>
-```
-
-### Opção 4: Email (Alternativas Gratuitas)
-
-#### SendGrid (100 emails/dia grátis)
-```bash
-npm install @sendgrid/mail
-```
-
-Crie `lib/sendgrid.ts`:
-```typescript
-import sgMail from '@sendgrid/mail'
-
-sgMail.setApiKey(process.env.SENDGRID_API_KEY!)
-
-export async function sendEmail(to: string, subject: string, html: string) {
-  await sgMail.send({ from: 'seu@email.com', to, subject, html })
-}
-```
-
-#### Mailgun (5,000 emails/mês grátis)
-```bash
-npm install mailgun.js form-data
-```
-
-#### Amazon SES (62,000 emails/mês grátis)
-```bash
-npm install @aws-sdk/client-ses
-```
-
-### Opção 5: Arquivo de Log Local
-
-Já está implementado em desenvolvimento! Os contatos são salvos em `contacts.log`
-
-```bash
-# Ver contatos
-cat contacts.log
-
-# Monitorar em tempo real
-tail -f contacts.log
-```
 
 ## 🔧 Configuração
 

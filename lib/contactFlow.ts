@@ -1,5 +1,6 @@
 import axios, { AxiosError } from 'axios'
 import { Effect } from 'effect'
+import { resolveBotApiBaseUrl } from './botApi'
 
 export interface ContactPayload {
   name: string
@@ -31,11 +32,7 @@ export class ContactFlowError extends Error {
   }
 }
 
-const DEFAULT_BASE_URL = 'https://bot.neonlab.dev'
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-
-const resolveBaseUrl = () =>
-  (process.env.NEXT_PUBLIC_BOT_API_BASE_URL || DEFAULT_BASE_URL).replace(/\/+$/, '')
 
 const extractStringField = (value: unknown, field: string): string | undefined => {
   if (typeof value === 'object' && value !== null && field in value) {
@@ -146,7 +143,7 @@ export const sendContactEffect = (input: ContactPayload) =>
       phone: validPayload.phone ?? ''
     }
 
-    const endpoint = `${resolveBaseUrl()}/contacts`
+    const endpoint = `${resolveBotApiBaseUrl()}/contacts`
 
     if (process.env.NODE_ENV !== 'production') {
       console.info('[ContactFlow] Enviando contato para o bot API', {

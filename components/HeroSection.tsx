@@ -6,6 +6,7 @@ import dynamic from 'next/dynamic'
 import { RotatingText } from './RotatingText'
 import { Button } from './UI'
 import { ArrowRight } from './Icons'
+import PresenceIndicator from './PresenceIndicator'
 
 // Carregar DotGrid dinamicamente para evitar SSR
 const DotGrid = dynamic(() => import('./DotGrid'), { ssr: false })
@@ -145,6 +146,12 @@ const HeroSection = () => {
         {/* Info adicional */}
         <motion.div variants={fadeIn} className="mt-8 sm:mt-10">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-0 sm:gap-6 px-4 sm:px-6 py-2 sm:py-3 rounded-xl sm:rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 max-w-full">
+            <PresenceIndicator className="w-full sm:w-auto px-2 sm:px-3 py-3 sm:py-2" />
+            <div className="sm:hidden" style={{ marginLeft: '0.75rem', width: 'calc(100% - 0.75rem)' }}>
+              <div className="h-px bg-white/10" />
+            </div>
+            <div className="hidden sm:block w-px h-4 bg-white/10 mx-2" />
+
             {/* Badge 1 */}
             <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-300/80 w-full sm:w-auto px-2 sm:px-3 py-3 sm:py-2">
               <span className="w-15 flex items-center justify-center flex-shrink-0">

@@ -37,3 +37,9 @@ Content-Type: application/json
   "email": "email-invalido",
   "message": ""
 }
+
+### Stream de presença (produção)
+# Utilize uma ferramenta compatível com SSE, por exemplo:
+# curl --no-buffer {{baseUrl}}/presence/stream
+GET {{baseUrl}}/presence/stream
+Accept: text/event-stream
