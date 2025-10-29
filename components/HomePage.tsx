@@ -4,14 +4,12 @@ import Image from 'next/image'
 import HeroSection from './HeroSection'
 import ContactForm from './ContactForm'
 import { Card, CardHeader, CardTitle, CardContent } from './UI'
-import PresenceConnection from './PresenceConnection'
 
 export default function HomePage() {
   const currentYear = new Date().getFullYear()
 
   return (
     <div className="flex flex-col min-h-screen bg-black text-gray-100 font-sans overflow-x-hidden reactbits-background">
-      <PresenceConnection />
       {/* Header padrão, mais natural */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 border-b border-white/10 shadow-sm">
         <div className="container mx-auto flex justify-between items-center px-4 py-3">
