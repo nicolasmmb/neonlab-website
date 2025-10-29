@@ -1,26 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
 import { SpeedInsights } from '@vercel/speed-insights/next'
-import Script from 'next/script'
-
-const siteUrl = 'https://neonlab.dev'
-
-const structuredData = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'Organization',
-      name: 'Neonlab.dev',
-      url: siteUrl,
-      logo: `${siteUrl}/favicon-512x512.png`,
-    },
-    {
-      '@type': 'WebSite',
-      name: 'Neonlab.dev',
-      url: siteUrl,
-    },
-  ],
-}
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -116,7 +96,7 @@ export const metadata: Metadata = {
   creator: 'neonlab.dev',
   publisher: 'neonlab.dev',
 
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL('https://neonlab.dev'),
 
   formatDetection: {
     telephone: false,
@@ -127,13 +107,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
-    url: siteUrl,
+    url: 'https://neonlab.dev',
     siteName: 'Neonlab.dev',
     title: 'neonlab.dev - Transformando ideias em experiências digitais modernas',
     description: "A Neonlab.dev ajuda empresas a modernizar processos e criar experiências digitais únicas — com tecnologia, design e performance de ponta.",
     images: [
       {
-        url: `${siteUrl}/og-image.png`,
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: 'neonlab.dev - Transformando ideias em experiências digitais modernas',
@@ -147,18 +127,18 @@ export const metadata: Metadata = {
     creator: '@neonlabdev',
     title: 'Neonlab.dev - Transformando ideias em experiências digitais modernas',
     description: "A Neonlab.dev ajuda empresas a modernizar processos e criar experiências digitais únicas — com tecnologia, design e performance de ponta.",
-    images: [`${siteUrl}/og-image.png`],
+    images: ['/og-image.png'],
   },
   icons: {
     icon: [
-      { rel: 'icon', url: `${siteUrl}/favicon.ico`, sizes: 'any', type: 'image/x-icon' },
-      { rel: 'icon', url: `${siteUrl}/favicon-32x32.png`, type: 'image/png', sizes: '32x32' },
-      { rel: 'icon', url: `${siteUrl}/favicon-192x192.png`, type: 'image/png', sizes: '192x192' },
-      { rel: 'icon', url: `${siteUrl}/favicon.svg`, type: 'image/svg+xml' },
+      { url: '/favicon.ico', sizes: 'any', type: 'image/x-icon' },
+      { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+      { url: '/favicon-192x192.png', type: 'image/png', sizes: '192x192' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
     ],
-    shortcut: [{ url: `${siteUrl}/favicon.ico`, type: 'image/x-icon' }],
-    apple: [{ url: `${siteUrl}/apple-touch-icon.png`, sizes: '180x180', type: 'image/png' }],
-    other: [{ rel: 'mask-icon', url: `${siteUrl}/favicon.svg`, color: '#1C2130' }],
+    shortcut: [{ url: '/favicon.ico', type: 'image/x-icon' }],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
+    other: [{ rel: 'mask-icon', url: '/favicon.svg', color: '#1C2130' }],
   },
   robots: {
     index: true,
@@ -176,9 +156,9 @@ export const metadata: Metadata = {
     statusBarStyle: 'black-translucent',
     title: 'Neonlab.dev',
   },
-  manifest: `${siteUrl}/site.webmanifest`,
+  manifest: '/site.webmanifest',
   alternates: {
-    canonical: siteUrl,
+    canonical: 'https://neonlab.dev',
   },
   category: 'Tecnologia e Desenvolvimento Web',
 };
@@ -191,13 +171,6 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <body suppressHydrationWarning>
-        <Script
-          id="neonlab-structured-data"
-          type="application/ld+json"
-          strategy="beforeInteractive"
-        >
-          {JSON.stringify(structuredData)}
-        </Script>
         {children}
         <SpeedInsights />
       </body>
