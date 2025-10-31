@@ -1,9 +1,19 @@
 import type { Metadata, Viewport } from 'next'
+import Script from 'next/script'
 import './globals.css'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import PresenceConnection from '@/components/PresenceConnection'
 
 const SITE_URL = 'https://www.neonlab.dev'
+const LOGO_URL = `${SITE_URL}/favicon-512x512.png`
+
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'neonlab',
+  url: SITE_URL,
+  logo: LOGO_URL,
+}
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -134,14 +144,17 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: 'any', type: 'image/x-icon' },
-      { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
-      { url: '/favicon-192x192.png', type: 'image/png', sizes: '192x192' },
-      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: `${SITE_URL}/favicon.ico`, sizes: 'any', type: 'image/x-icon' },
+      { url: `${SITE_URL}/favicon-32x32.png`, type: 'image/png', sizes: '32x32' },
+      { url: `${SITE_URL}/favicon-192x192.png`, type: 'image/png', sizes: '192x192' },
+      { url: `${SITE_URL}/favicon-512x512.png`, type: 'image/png', sizes: '512x512' },
+      { url: `${SITE_URL}/favicon.svg`, type: 'image/svg+xml' },
     ],
-    shortcut: [{ url: '/favicon.ico', type: 'image/x-icon' }],
-    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
-    other: [{ rel: 'mask-icon', url: '/favicon.svg', color: '#1C2130' }],
+    shortcut: [{ url: `${SITE_URL}/favicon.ico`, type: 'image/x-icon' }],
+    apple: [{ url: `${SITE_URL}/apple-touch-icon.png`, sizes: '180x180', type: 'image/png' }],
+    other: [
+      { rel: 'mask-icon', url: `${SITE_URL}/favicon.svg`, color: '#1C2130' },
+    ],
   },
   robots: {
     index: true,
@@ -174,6 +187,9 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <body suppressHydrationWarning>
+        <Script id="organization-jsonld" type="application/ld+json" strategy="beforeInteractive">
+          {JSON.stringify(organizationJsonLd)}
+        </Script>
         <PresenceConnection />
         {children}
         <SpeedInsights />
