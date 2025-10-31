@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import PresenceConnection from '@/components/PresenceConnection'
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -171,6 +172,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <body suppressHydrationWarning>
+        <PresenceConnection />
         {children}
         <SpeedInsights />
       </body>
