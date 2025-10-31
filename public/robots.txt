@@ -6,7 +6,7 @@ Allow: /
 # Disallow: /api
 
 # Sitemaps
-Sitemap: https://neonlab.dev/sitemap.xml
+Sitemap: https://www.neonlab.dev/sitemap.xml
 
 # Crawl-delay (opcional, para evitar sobrecarga)
 Crawl-delay: 1

@@ -3,6 +3,8 @@ import './globals.css'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import PresenceConnection from '@/components/PresenceConnection'
 
+const SITE_URL = 'https://www.neonlab.dev'
+
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
@@ -97,7 +99,7 @@ export const metadata: Metadata = {
   creator: 'neonlab.dev',
   publisher: 'neonlab.dev',
 
-  metadataBase: new URL('https://neonlab.dev'),
+  metadataBase: new URL(SITE_URL),
 
   formatDetection: {
     telephone: false,
@@ -108,7 +110,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
-    url: 'https://neonlab.dev',
+    url: SITE_URL,
     siteName: 'Neonlab.dev',
     title: 'neonlab.dev - Transformando ideias em experiências digitais modernas',
     description: "A Neonlab.dev ajuda empresas a modernizar processos e criar experiências digitais únicas — com tecnologia, design e performance de ponta.",
@@ -159,7 +161,7 @@ export const metadata: Metadata = {
   },
   manifest: '/site.webmanifest',
   alternates: {
-    canonical: 'https://neonlab.dev',
+    canonical: SITE_URL,
   },
   category: 'Tecnologia e Desenvolvimento Web',
 };
